@@ -43,7 +43,7 @@ export default function App() {
                 onPress={toggleTheme}
                 size={20}
                 style={{ marginRight: 15 }}
-                color={theme === "light" ? "black" : "white"}
+                color= {styles.iconcolor.color}
               />
             ),
             headerStyle: {

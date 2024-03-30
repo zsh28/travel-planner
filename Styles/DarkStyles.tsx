@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  //header
   header: {
     alignItems: "center",
     backgroundColor: "#04052e",
@@ -21,7 +20,6 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
 
-  //buttonstyle
   madeButton: {
     height: 20,
     width: 100,
@@ -40,6 +38,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
   },
+  iconcolor: {
+    color: "white",
+  }
   
 });
 

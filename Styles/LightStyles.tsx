@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  //header
   header: {
     alignItems: "center",
     backgroundColor: "#c7c9eb",
@@ -40,6 +39,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
   },
+  iconcolor: {
+    color: "black",
+  }
 });
 
 export default styles;

@@ -6,9 +6,6 @@ import Header from "../components/header";
 import ThemeContext from "../theme/ThemeContext";
 import { LightStyles, DarkStyles } from "../Styles";
 
-
-//needs style on #18
-
 const Settings = () => {
   const nav = useNavigation();
   const { theme } = useContext(ThemeContext);
