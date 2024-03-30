@@ -5,7 +5,7 @@ import {
   StyleProp,
   ViewStyle,
 } from "react-native";
-import styles from "../Styles/styleconfig";
+import styles from "../Styles/LightStyles";
 
 interface Props {
   onPress: () => void;

@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import React from "react";
-import styles from "../Styles/styleconfig";
+import styles from "../Styles/LightStyles";
 import { HeaderProp } from "../Types/typeconfig";
 
 const Header = ({ headerTitle }: HeaderProp) => {
