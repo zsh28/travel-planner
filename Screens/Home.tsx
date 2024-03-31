@@ -1,4 +1,5 @@
 import { View, Text, Button, TouchableOpacity } from "react-native";
+
 import { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Header from "../components/header";
@@ -10,6 +11,7 @@ const Home = () => {
 const { theme } = useContext(ThemeContext);
 const styles = theme === "light" ? LightStyles : DarkStyles;
   const nav = useNavigation();
+
   const handlerSettings = () => {
     nav.navigate("Settings" as never);
   };
