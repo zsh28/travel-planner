@@ -5,7 +5,7 @@ import {
   StyleProp,
   ViewStyle,
 } from "react-native";
-import styles from "../Styles/styleconfig";
+import { LightStyles } from "../Styles";
 
 interface Props {
   onPress: () => void;
@@ -20,7 +20,7 @@ const MadeButton = (props: Props) => {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.madeButton]}
+      style={[LightStyles.madeButton]}
       disabled={disabled}
     >
       <Text>{text}</Text>

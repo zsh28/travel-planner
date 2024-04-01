@@ -1,11 +1,15 @@
 import { View, Text, Button, TouchableOpacity } from "react-native";
-import React from "react";
+
+import { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
-import styles from "../Styles/styleconfig";
 import Header from "../components/header";
 import MadeButton from "../components/button";
+import ThemeContext from "../theme/ThemeContext";
+import { LightStyles, DarkStyles } from "../Styles";
 
 const Home = () => {
+const { theme } = useContext(ThemeContext);
+const styles = theme === "light" ? LightStyles : DarkStyles;
   const nav = useNavigation();
 
   const handlerSettings = () => {
