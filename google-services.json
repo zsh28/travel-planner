@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "979031949651",
+    "project_id": "travelplanner-zeesh",
+    "storage_bucket": "travelplanner-zeesh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979031949651:android:1dc9ba0e29e17dced2a1a6",
+        "android_client_info": {
+          "package_name": "com.zeeshdev.travelplanner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGEX-aI5cLAYrrXa_DhmniW4RArAKlyj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,41 +7,85 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-
   header: {
-    alignItems: "center",
     backgroundColor: "#c7c9eb",
     height: 50,
     justifyContent: "center",
   },
   headerTitle: {
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 16,
     color: "#000",
-  },
-
-  //buttonstyle
-  madeButton: {
-    height: 20,
-    width: 100,
-    backgroundColor: "#f27900",
-    borderRadius: 10,
-    shadowColor: "#000", 
-    shadowOffset: {
-      width: 0, 
-      height: 4,
-    },
-    shadowOpacity: 0.5, 
-    shadowRadius: 5,
-    elevation: 5,
-  },
-  buttonText: {
-    fontSize: 24,
-    fontWeight: "bold",
   },
   iconcolor: {
     color: "black",
-  }
+  },
+  input: {
+    height: 50,
+    width: "100%",
+    paddingHorizontal: 10,
+  },
+  button: {
+    marginTop: 20,
+    width: 300,
+    backgroundColor: "green",
+    borderRadius: 10,
+    paddingVertical: 10,
+    alignItems: "center",
+  },
+  redbutton: {
+    marginTop: 20,
+    width: 300,
+    backgroundColor: "red",
+    borderRadius: 10,
+    paddingVertical: 10,
+    alignItems: "center",
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#fff",
+  },
+  placeholder: {
+    color: "#000",
+  },
+  // Add Flight Icon
+  addflightIcon: {
+    position: "absolute",
+    bottom: 20,
+    right: 20,
+  },
+  addflightcolorIcon: {
+    color: "blue",
+  },
+  // Modal Styles
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "#CDD1FF",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
+    color: "black" 
+  },
 });
 
 export default styles;
