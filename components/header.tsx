@@ -10,7 +10,9 @@ const Header = ({ headerTitle }: HeaderProp) => {
   const { theme } = useContext(ThemeContext);
   const styles = theme === "light" ? LightStyles : DarkStyles;
   return (
+    <View style={styles.header}>
       <Text style={styles.headerTitle}>{headerTitle}</Text>
+    </View>
   );
 };
 
