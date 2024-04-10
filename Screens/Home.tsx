@@ -1,7 +1,7 @@
-import { View, Text, Button, TouchableOpacity, Modal, TextInput } from "react-native";
+import { View, Text, TouchableOpacity, Modal, TextInput } from "react-native";
 import { useContext, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { RedButton, Header, GreenButton } from "../components";
+import { Header, Button } from "../components";
 import ThemeContext from "../theme/ThemeContext";
 import { LightStyles, DarkStyles } from "../Styles";
 import { Ionicons } from "@expo/vector-icons";
@@ -14,10 +14,9 @@ const Home = () => {
   //state to check if modal is visible
   const [isModalVisible, setModalVisible] = useState(false);
 
-  //set modal to visible -> True
-  const openModal =() => setModalVisible(true);
-  //set modal to visible -> False
-  const closeModal =() => setModalVisible(false);
+  const ToggleModal = () => {
+    setModalVisible(!isModalVisible);
+  }
 
   return <View style={styles.container}>
     <Ionicons
@@ -25,16 +24,14 @@ const Home = () => {
         size={40}
         color={styles.addflightcolorIcon.color}
         style={styles.addflightIcon}
-        onPress={() => {
-          openModal();
-        }}
+        onPress={ToggleModal}
       />
 
       <Modal
         animationType="fade"
         transparent={true}
         visible={isModalVisible}
-        onRequestClose={closeModal}
+        onRequestClose={ToggleModal}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
@@ -44,9 +41,10 @@ const Home = () => {
               placeholder="Flight Number"
               placeholderTextColor={styles.placeholder.color}
             />
-            <GreenButton
-              onPress={closeModal}
+            <Button
+              onPress={ToggleModal}
               disabled={false}
+              variant={"green"}
               text={"Submit"}
             />
           </View>

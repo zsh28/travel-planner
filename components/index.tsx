@@ -1,5 +1,4 @@
 import Header from "./header";
-import RedButton from "./buttonred";
-import GreenButton from "./buttongreen";
+import Button from "./button";
 
-export { Header, RedButton, GreenButton };
+export { Header, Button };
