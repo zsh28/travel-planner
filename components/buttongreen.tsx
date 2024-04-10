@@ -5,7 +5,9 @@ import {
   StyleProp,
   ViewStyle,
 } from "react-native";
-import { LightStyles } from "../Styles";
+import { LightStyles, DarkStyles } from "../Styles";
+import { useContext } from "react";
+import ThemeContext from "../theme/ThemeContext";
 
 interface Props {
   onPress: () => void;
@@ -14,18 +16,20 @@ interface Props {
   style?: StyleProp<ViewStyle>;
 }
 
-const MadeButton = (props: Props) => {
+const GreenButton = (props: Props) => {
   const { onPress, text, disabled, style } = props;
+  const { theme } = useContext(ThemeContext);
+  const styles = theme === "light" ? LightStyles : DarkStyles;
 
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[LightStyles.madeButton]}
+      style={[styles.button]}
       disabled={disabled}
     >
-      <Text>{text}</Text>
+      <Text style={styles.buttonText}>{text}</Text>
     </TouchableOpacity>
   );
 };
 
-export default MadeButton;
+export default GreenButton;
