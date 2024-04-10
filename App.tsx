@@ -13,7 +13,6 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [theme, setTheme] = useState("light");
-
   const styles = theme === "light" ? LightStyles : DarkStyles;
 
   useEffect(() => {
@@ -21,7 +20,6 @@ export default function App() {
       const savedTheme = (await AsyncStorage.getItem("theme")) ?? "light";
       setTheme(savedTheme);
     };
-
     fetchTheme();
   }, []);
 

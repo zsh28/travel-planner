@@ -11,7 +11,7 @@ const Header = ({ headerTitle }: HeaderProp) => {
   const styles = theme === "light" ? LightStyles : DarkStyles;
   return (
     <View style={styles.header}>
-      <Text style={styles.headerTitle}>{headerTitle}</Text>
+      <Text style={LightStyles.headerTitle}>{headerTitle}</Text>
     </View>
   );
 };
