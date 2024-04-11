@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { RedButton, Header, GreenButton } from "../components";
+import { Button, Header } from "../components";
 import ThemeContext from "../theme/ThemeContext";
 import { LightStyles, DarkStyles } from "../Styles";
 
@@ -29,9 +29,10 @@ const Settings = () => {
         secureTextEntry 
         placeholderTextColor={styles.placeholder.color} 
         />
-        <GreenButton
+        <Button
           onPress={changeEmail}
           disabled={false}
+          variant={"green"}
           text={"Change Email"}
         />
         <View style={{ height: 20 }}></View>
@@ -46,9 +47,10 @@ const Settings = () => {
         secureTextEntry 
         placeholderTextColor={styles.placeholder.color} 
         />
-      <GreenButton
+      <Button
         onPress={changePassword}
         disabled={false}
+        variant={"green"}
         text={"Change Password"}
       />
       

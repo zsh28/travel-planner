@@ -1,7 +1,7 @@
-import { View, Text, Button, TouchableOpacity, TextInput } from "react-native";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { RedButton, Header, GreenButton } from "../components";
+import { Header, Button } from "../components";
 import ThemeContext from "../theme/ThemeContext";
 import { LightStyles, DarkStyles } from "../Styles";
 
@@ -12,7 +12,7 @@ const Login = () => {
   const handlerRegister = () => {
     nav.navigate("Register" as never);
   };
-  //function to login
+  
   const loginFunction = () => {
   };
 
@@ -28,14 +28,16 @@ const Login = () => {
         secureTextEntry 
         placeholderTextColor={styles.placeholder.color} 
         />
-        <GreenButton
+        <Button
           onPress={loginFunction}
           disabled={false}
+          variant={"green"}
           text={"Login"}
         />
-        <RedButton
+        <Button
           onPress={handlerRegister}
           text={"Register here"}
+          variant={"red"}
           disabled={false}
         />
         

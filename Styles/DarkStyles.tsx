@@ -30,15 +30,6 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 20,
     width: 300,
-    backgroundColor: "green",
-    borderRadius: 10,
-    paddingVertical: 10,
-    alignItems: "center",
-  },
-  redbutton: {
-    marginTop: 20,
-    width: 300,
-    backgroundColor: "red",
     borderRadius: 10,
     paddingVertical: 10,
     alignItems: "center",

@@ -1,3 +1,4 @@
+
 import {
   Button as RNButton,
   TouchableOpacity,
@@ -13,18 +14,19 @@ interface Props {
   onPress: () => void;
   text?: string;
   disabled?: boolean;
+  variant: "red" | "green";
   style?: StyleProp<ViewStyle>;
 }
 
-const GreenButton = (props: Props) => {
-  const { onPress, text, disabled, style } = props;
+const Button = (props: Props) => {
+  const { onPress, text, disabled, style, variant } = props;
   const { theme } = useContext(ThemeContext);
   const styles = theme === "light" ? LightStyles : DarkStyles;
 
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.button]}
+      style={[styles.button, { backgroundColor: variant === "red" ? "red" : "green" }]}
       disabled={disabled}
     >
       <Text style={styles.buttonText}>{text}</Text>
@@ -32,4 +34,4 @@ const GreenButton = (props: Props) => {
   );
 };
 
-export default GreenButton;
+export default Button;
