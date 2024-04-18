@@ -10,50 +10,51 @@ const Settings = () => {
   const { theme } = useContext(ThemeContext);
   const styles = theme === "light" ? LightStyles : DarkStyles;
 
-  const changeEmail = () => {
-  };
+  const changeEmail = () => {};
 
-  const changePassword = () => {
-  };
+  const changePassword = () => {};
 
   return (
     <View style={styles.container}>
       <Header headerTitle={"Change Email"} />
-      <TextInput style={styles.input} 
-        placeholder="New Email" 
-        keyboardType="email-address" 
-        placeholderTextColor={styles.placeholder.color} 
-        />
-        <TextInput style={styles.input} 
-        placeholder="Password" 
-        secureTextEntry 
-        placeholderTextColor={styles.placeholder.color} 
-        />
-        <Button
-          onPress={changeEmail}
-          disabled={false}
-          variant={"green"}
-          text={"Change Email"}
-        />
-        <View style={{ height: 20 }}></View>
+      <TextInput
+        style={styles.input}
+        placeholder="New Email"
+        keyboardType="email-address"
+        placeholderTextColor={styles.placeholder.color}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Password"
+        secureTextEntry
+        placeholderTextColor={styles.placeholder.color}
+      />
+      <Button
+        onPress={changeEmail}
+        disabled={false}
+        variant={"green"}
+        text={"Change Email"}
+      />
+      <View style={{ height: 20 }}></View>
       <Header headerTitle={"Change Password"} />
-      <TextInput style={styles.input} 
-        placeholder="Old Password" 
-        secureTextEntry 
-        placeholderTextColor={styles.placeholder.color} 
-        />
-      <TextInput style={styles.input}
-        placeholder="New Password" 
-        secureTextEntry 
-        placeholderTextColor={styles.placeholder.color} 
-        />
+      <TextInput
+        style={styles.input}
+        placeholder="Old Password"
+        secureTextEntry
+        placeholderTextColor={styles.placeholder.color}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="New Password"
+        secureTextEntry
+        placeholderTextColor={styles.placeholder.color}
+      />
       <Button
         onPress={changePassword}
         disabled={false}
         variant={"green"}
         text={"Change Password"}
       />
-      
     </View>
   );
 };

@@ -49,6 +49,15 @@ const styles = StyleSheet.create({
   addflightcolorIcon: {
     color: "blue",
   },
+  //close icon
+  closeIcon: {
+    position: "absolute",
+    top: 20,
+    right: 20,
+  },
+  closeIconColor: {
+    color: "red",
+  },
   // Modal Styles
   centeredView: {
     flex: 1,
@@ -65,17 +74,17 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 2
+      height: 2,
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    elevation: 5
+    elevation: 5,
   },
-  
+
   modalText: {
     marginBottom: 15,
     textAlign: "center",
-    color: "black" 
+    color: "black",
   },
 });
 

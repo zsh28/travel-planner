@@ -1,4 +1,3 @@
-
 import {
   Button as RNButton,
   TouchableOpacity,
@@ -26,7 +25,10 @@ const Button = (props: Props) => {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.button, { backgroundColor: variant === "red" ? "red" : "green" }]}
+      style={[
+        styles.button,
+        { backgroundColor: variant === "red" ? "red" : "green" },
+      ]}
       disabled={disabled}
     >
       <Text style={styles.buttonText}>{text}</Text>
