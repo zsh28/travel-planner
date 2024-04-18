@@ -22,7 +22,7 @@ const Home = () => {
     arrival: "",
   });
 
-  const togglePicker = () => {
+  const TogglePicker = () => {
     setPickerVisible(!isPickerVisible);
   };
 
@@ -125,7 +125,7 @@ const Home = () => {
               onChangeText={(text) => handleInputChange("arrival", text)}
               value={flightForm.arrival}
             />
-            <TouchableOpacity onPress={togglePicker}>
+            <TouchableOpacity onPress={TogglePicker}>
               <TextInput
                 style={styles.input}
                 placeholder="Select Date of Departure"
@@ -138,7 +138,7 @@ const Home = () => {
               animationType="slide"
               transparent={true}
               visible={isPickerVisible}
-              onRequestClose={togglePicker}
+              onRequestClose={TogglePicker}
             >
               {isPickerVisible && (
                 <DatePicker
