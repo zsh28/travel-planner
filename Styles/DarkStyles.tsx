@@ -48,6 +48,15 @@ const styles = StyleSheet.create({
     bottom: 20,
     right: 20,
   },
+  //close icon
+  closeIcon: {
+    position: "absolute",
+    top: 20,
+    right: 20,
+  },
+  closeIconColor: {
+    color: "red",
+  },
   addflightcolorIcon: {
     color: "red",
   },
@@ -58,29 +67,28 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 22,
   },
-  
+
   modalView: {
     margin: 20,
-    backgroundColor: "#272D71", 
+    backgroundColor: "#272D71",
     borderRadius: 20,
     padding: 35,
     alignItems: "center",
-    shadowColor: "#fff", 
+    shadowColor: "#fff",
     shadowOffset: {
       width: 0,
-      height: 2
+      height: 2,
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    elevation: 5
+    elevation: 5,
   },
-  
+
   modalText: {
     marginBottom: 15,
     textAlign: "center",
-    color: "white"
+    color: "white",
   },
-  
 });
 
 export default styles;
