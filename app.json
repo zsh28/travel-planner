@@ -29,14 +29,14 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.zeeshdev.travelplanner"
+      "package": "com.swyftpain.travelplanner"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "8bd7f775-911b-4f79-a3ec-c3763d729d86"
+        "projectId": "c4a23c83-9af8-4b86-a020-4879b612189d"
       }
     }
   }
