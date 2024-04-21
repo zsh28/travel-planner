@@ -8,12 +8,14 @@ import { Ionicons } from "@expo/vector-icons";
 import ThemeContext from "./theme/ThemeContext";
 import { LightStyles, DarkStyles } from "./Styles";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import auth from "@react-native-firebase/auth";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [theme, setTheme] = useState("light");
   const styles = theme === "light" ? LightStyles : DarkStyles;
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchTheme = async () => {
@@ -29,11 +31,30 @@ export default function App() {
     AsyncStorage.setItem("theme", newTheme);
   };
 
+  const [user, setUser] = useState<any>();
+
+  useEffect(() => {
+    const sub = auth().onAuthStateChanged((member) => {
+      if (member) {
+        setUser(member);
+      } else {
+        setUser(null);
+      }
+
+      if (loading) setLoading(false);
+    });
+    return () => {
+      sub();
+    };
+  }, []);
+
+  if (loading) return null;
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Home"
+          initialRouteName={user ? "Home" : "Login"}
           screenOptions={({ navigation, route }) => ({
             headerRight: () => (
               <Ionicons
