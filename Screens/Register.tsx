@@ -21,10 +21,15 @@ const Register = () => {
   });
 
   const registerFunction = () => {
-    if (!registrationForm.email || !registrationForm.password || registrationForm.email === "" || registrationForm.password === "") {
+    if (
+      !registrationForm.email ||
+      !registrationForm.password ||
+      registrationForm.email === "" ||
+      registrationForm.password === ""
+    ) {
       Alert.alert("Please enter all fields.");
       return;
-    };
+    }
 
     auth()
       .createUserWithEmailAndPassword(
@@ -71,13 +76,13 @@ const Register = () => {
       <Button
         onPress={registerFunction}
         disabled={false}
-        variant={"green"}
+        variant={"primary"}
         text={"Register"}
       />
       <Button
         onPress={handlerLogin}
         text={"Have an account? Login here"}
-        variant={"red"}
+        variant={"secondary"}
         disabled={false}
       />
     </View>

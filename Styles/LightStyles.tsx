@@ -3,12 +3,12 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#dcdde8",
+    backgroundColor: "#DCDDE8",
     alignItems: "center",
     justifyContent: "center",
   },
   header: {
-    backgroundColor: "#c7c9eb",
+    backgroundColor: "#B0B0B9",
     height: 50,
     justifyContent: "center",
   },
@@ -21,9 +21,13 @@ const styles = StyleSheet.create({
     color: "black",
   },
   input: {
+    backgroundColor: "#DCDDE8",
+    borderWidth: 1,
+    borderColor: "#000",
     height: 50,
-    width: "100%",
+    width: "85%",
     paddingHorizontal: 10,
+    color: "#000",
   },
   button: {
     marginTop: 20,
@@ -46,9 +50,6 @@ const styles = StyleSheet.create({
     bottom: 20,
     right: 20,
   },
-  addflightcolorIcon: {
-    color: "blue",
-  },
   //close icon
   closeIcon: {
     position: "absolute",
@@ -56,7 +57,10 @@ const styles = StyleSheet.create({
     right: 20,
   },
   closeIconColor: {
-    color: "red",
+    color: "#000",
+  },
+  addflightcolorIcon: {
+    color: "#000",
   },
   // Modal Styles
   centeredView: {
@@ -67,18 +71,19 @@ const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    backgroundColor: "#CDD1FF",
+    backgroundColor: "#B0B0B9",
     borderRadius: 20,
+    borderWidth: 0.5,
     padding: 35,
     alignItems: "center",
-    shadowColor: "#000",
+    shadowColor: "#fff",
     shadowOffset: {
       width: 0,
       height: 2,
     },
     shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
+    shadowRadius: 10,
+    elevation: 20,
   },
 
   modalText: {

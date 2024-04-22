@@ -1,7 +1,7 @@
-import { View, Text, TouchableOpacity, TextInput, Alert } from "react-native";
+import { View, TextInput, Alert } from "react-native";
 import { useContext, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { Header, Button } from "../components";
+import { Button } from "../components";
 import ThemeContext from "../theme/ThemeContext";
 import { LightStyles, DarkStyles } from "../Styles";
 import auth from "@react-native-firebase/auth";
@@ -22,10 +22,15 @@ const Login = () => {
   });
 
   const loginFunction = () => {
-    if (!loginForm.email || !loginForm.password || loginForm.email === "" || loginForm.password === "") {
+    if (
+      !loginForm.email ||
+      !loginForm.password ||
+      loginForm.email === "" ||
+      loginForm.password === ""
+    ) {
       Alert.alert("Please enter all fields.");
       return;
-    };
+    }
 
     auth()
       .signInWithEmailAndPassword(loginForm.email, loginForm.password)
@@ -59,13 +64,13 @@ const Login = () => {
       <Button
         onPress={loginFunction}
         text={"Login"}
-        variant={"green"}
+        variant={"primary"}
         disabled={false}
       />
       <Button
         onPress={handlerRegister}
         text={"Register here"}
-        variant={"red"}
+        variant={"secondary"}
         disabled={false}
       />
     </View>
