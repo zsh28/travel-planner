@@ -1,10 +1,4 @@
-import {
-  Button as RNButton,
-  TouchableOpacity,
-  Text,
-  StyleProp,
-  ViewStyle,
-} from "react-native";
+import { TouchableOpacity, Text, StyleProp, ViewStyle } from "react-native";
 import { LightStyles, DarkStyles } from "../Styles";
 import { useContext } from "react";
 import ThemeContext from "../theme/ThemeContext";
@@ -23,8 +17,8 @@ const Button = (props: Props) => {
   const styles = theme === "light" ? LightStyles : DarkStyles;
 
   const buttonStyle = {
-    primary: theme === "light" ? "#18385D" : "#102741",
-    secondary: theme === "light" ? "#1B7416" : "#155c11",
+    primary: styles.primary.color,
+    secondary: styles.secondary.color,
   };
 
   return (
@@ -35,6 +29,7 @@ const Button = (props: Props) => {
         {
           backgroundColor: buttonStyle[variant],
         },
+        style,
       ]}
       disabled={disabled}
     >

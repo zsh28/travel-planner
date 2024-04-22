@@ -1,6 +1,7 @@
 import axios from "axios";
 import { XMLParser } from "fast-xml-parser";
 
+// This has more than 4 values being passed to it, generally when you have more than 3, you should likely use them as an object to benefit from readability and autocomplete
 const getFlightData = async (
   departure: string,
   arrival: string,
@@ -9,14 +10,16 @@ const getFlightData = async (
 ) => {
   //format date for API call
   const dateFormatted = dateOfDeparture.replaceAll("/", "");
-  console.log("Formatted Date for API:", dateFormatted);
+
   //get flight number eg BA472 split it into BA and 472
   const flightNumberSplit = flightNumber.match(/([a-zA-Z]+)([0-9]+)/);
+
+  // Generally you should never use String, Number, etc with capital numbers. These are not the actual types or values. They are class constructors.
+  // If you did ``typeof`` on them, they would return type of `object`.
   const airline = flightNumberSplit ? flightNumberSplit[1] : String;
   const flight = flightNumberSplit ? flightNumberSplit[2] : Number;
 
   const url = `https://timetable-lookup.p.rapidapi.com/TimeTable/${departure}/${arrival}/${dateFormatted}`;
-  console.log("Requesting URL:", url);
 
   const options = {
     method: "GET",
@@ -33,7 +36,6 @@ const getFlightData = async (
 
   try {
     const response = await axios.request(options);
-    console.log("XML Data:", response.data);
 
     const parser = new XMLParser({
       ignoreAttributes: false,
@@ -45,7 +47,6 @@ const getFlightData = async (
     const jsonData = parser.parse(response.data);
     return jsonData;
   } catch (error) {
-    console.error("Error in API Call:", error);
     throw new Error("Failed to fetch data");
   }
 };

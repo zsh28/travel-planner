@@ -11,14 +11,14 @@ const Register = () => {
   const styles = theme === "light" ? LightStyles : DarkStyles;
   const nav = useNavigation();
 
-  const handlerLogin = () => {
-    nav.navigate("Login" as never);
-  };
-
   const [registrationForm, setRegistrationForm] = useState({
     email: "",
     password: "",
   });
+
+  const handlerLogin = () => {
+    nav.navigate("Login" as never);
+  };
 
   const registerFunction = () => {
     if (
@@ -42,14 +42,14 @@ const Register = () => {
       })
       .catch((error) => {
         if (error.code === "auth/email-already-in-use") {
-          console.log("That email address is already in use!");
+          Alert.alert("That email address is already in use!");
         }
 
         if (error.code === "auth/invalid-email") {
-          console.log("That email address is invalid!");
+          Alert.alert("That email address is invalid!");
         }
 
-        console.log(error.message);
+        Alert.alert(error.message);
       });
   };
 
@@ -76,14 +76,13 @@ const Register = () => {
       <Button
         onPress={registerFunction}
         disabled={false}
-        variant={"primary"}
-        text={"Register"}
+        variant="primary"
+        text="Register"
       />
       <Button
         onPress={handlerLogin}
-        text={"Have an account? Login here"}
-        variant={"secondary"}
-        disabled={false}
+        text="Have an account? Login here"
+        variant="secondary"
       />
     </View>
   );
