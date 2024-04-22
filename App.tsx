@@ -1,5 +1,5 @@
 import "react-native-gesture-handler";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
@@ -8,7 +8,7 @@ import { Ionicons } from "@expo/vector-icons";
 import ThemeContext from "./theme/ThemeContext";
 import { LightStyles, DarkStyles } from "./Styles";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import auth from "@react-native-firebase/auth";
+import auth, { FirebaseAuthTypes } from "@react-native-firebase/auth";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,22 +16,23 @@ export default function App() {
   const [theme, setTheme] = useState("light");
   const styles = theme === "light" ? LightStyles : DarkStyles;
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState<FirebaseAuthTypes.User | null>();
 
   useEffect(() => {
     const fetchTheme = async () => {
       const savedTheme = (await AsyncStorage.getItem("theme")) ?? "light";
       setTheme(savedTheme);
     };
+
     fetchTheme();
   }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
+
     AsyncStorage.setItem("theme", newTheme);
   };
-
-  const [user, setUser] = useState<any>();
 
   useEffect(() => {
     const sub = auth().onAuthStateChanged((member) => {
@@ -43,6 +44,7 @@ export default function App() {
 
       if (loading) setLoading(false);
     });
+
     return () => {
       sub();
     };
@@ -66,8 +68,8 @@ export default function App() {
               />
             ),
             headerLeft: () => {
-              // Get the current route name
               const routeName = route.name;
+
               // If the route is Home, display the settings icon
               if (routeName === "Home") {
                 return (
@@ -80,6 +82,7 @@ export default function App() {
                   />
                 );
               }
+
               return null;
             },
             headerStyle: {

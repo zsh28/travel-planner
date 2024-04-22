@@ -9,17 +9,16 @@ import auth from "@react-native-firebase/auth";
 const Login = () => {
   const { theme } = useContext(ThemeContext);
   const styles = theme === "light" ? LightStyles : DarkStyles;
-
   const nav = useNavigation();
-
-  const handlerRegister = () => {
-    nav.navigate("Register" as never);
-  };
 
   const [loginForm, setLoginForm] = useState({
     email: "",
     password: "",
   });
+
+  const handlerRegister = () => {
+    nav.navigate("Register" as never);
+  };
 
   const loginFunction = () => {
     if (
@@ -39,8 +38,9 @@ const Login = () => {
       })
       .catch((error) => {
         if (error.code === "auth/invalid-email") {
-          console.log("That email address is invalid!");
+          Alert.alert("That email address is invalid!");
         }
+
         console.error(error);
       });
   };
@@ -61,17 +61,11 @@ const Login = () => {
         secureTextEntry
         placeholderTextColor={styles.placeholder.color}
       />
-      <Button
-        onPress={loginFunction}
-        text={"Login"}
-        variant={"primary"}
-        disabled={false}
-      />
+      <Button onPress={loginFunction} text="Login" variant="primary" />
       <Button
         onPress={handlerRegister}
-        text={"Register here"}
-        variant={"secondary"}
-        disabled={false}
+        text="Register here"
+        variant="secondary"
       />
     </View>
   );

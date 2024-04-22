@@ -42,15 +42,13 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   placeholder: {
-    color: "#000",
+    color: "gray",
   },
-  // Add Flight Icon
   addflightIcon: {
     position: "absolute",
     bottom: 20,
     right: 20,
   },
-  //close icon
   closeIcon: {
     position: "absolute",
     top: 20,
@@ -62,7 +60,6 @@ const styles = StyleSheet.create({
   addflightcolorIcon: {
     color: "#000",
   },
-  // Modal Styles
   centeredView: {
     flex: 1,
     justifyContent: "center",
@@ -85,12 +82,24 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     elevation: 20,
   },
-
   modalText: {
     marginBottom: 15,
     textAlign: "center",
     color: "black",
   },
+  text: {
+    color: "#000",
+    textAlign: "center",
+  },
+  separator: {
+    color: "#000",
+  },
+  primary: {
+    color: "#18385D" 
+   },
+   secondary: {
+     color: "#1B7416"
+   }
 });
 
 export default styles;

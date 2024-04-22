@@ -24,12 +24,7 @@ const Settings = () => {
 
   return (
     <View style={styles.container}>
-      <Button
-        onPress={logout}
-        disabled={false}
-        variant={"primary"}
-        text={"Sign Out"}
-      />
+      <Button onPress={logout} variant="primary" text="Sign Out" />
     </View>
   );
 };

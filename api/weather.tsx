@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const getWeatherData = async (location: String) => {
   const options = {
     method: "GET",
@@ -9,12 +10,11 @@ const getWeatherData = async (location: String) => {
       "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
     },
   };
+
   try {
     const response = await axios.request(options);
-    console.log("Weather Data:", response.data);
     return response.data;
   } catch (error) {
-    console.error("Error in API Call:", error);
     throw new Error("Failed to fetch data");
   }
 };
