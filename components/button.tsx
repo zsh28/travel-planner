@@ -13,7 +13,7 @@ interface Props {
   onPress: () => void;
   text?: string;
   disabled?: boolean;
-  variant: "red" | "green";
+  variant: "primary" | "secondary";
   style?: StyleProp<ViewStyle>;
 }
 
@@ -22,12 +22,19 @@ const Button = (props: Props) => {
   const { theme } = useContext(ThemeContext);
   const styles = theme === "light" ? LightStyles : DarkStyles;
 
+  const buttonStyle = {
+    primary: theme === "light" ? "#18385D" : "#102741",
+    secondary: theme === "light" ? "#1B7416" : "#155c11",
+  };
+
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[
         styles.button,
-        { backgroundColor: variant === "red" ? "red" : "green" },
+        {
+          backgroundColor: buttonStyle[variant],
+        },
       ]}
       disabled={disabled}
     >

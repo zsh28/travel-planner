@@ -15,7 +15,7 @@ const Settings = () => {
     auth()
       .signOut()
       .then(() => {
-        nav.navigate("Login" as never)
+        nav.navigate("Login" as never);
       })
       .catch((error) => {
         console.error(error);
@@ -27,7 +27,7 @@ const Settings = () => {
       <Button
         onPress={logout}
         disabled={false}
-        variant={"green"}
+        variant={"primary"}
         text={"Sign Out"}
       />
     </View>

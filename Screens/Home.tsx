@@ -155,7 +155,7 @@ const Home = () => {
             <Button
               onPress={handleSubmit}
               disabled={false}
-              variant={"green"}
+              variant={"primary"}
               text={"Submit"}
             />
           </View>

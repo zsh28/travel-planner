@@ -3,13 +3,12 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#090b38",
+    backgroundColor: "#18385D",
     alignItems: "center",
     justifyContent: "center",
   },
-
   header: {
-    backgroundColor: "#04052e",
+    backgroundColor: "#132C4A",
     height: 50,
     justifyContent: "center",
   },
@@ -22,8 +21,11 @@ const styles = StyleSheet.create({
     color: "white",
   },
   input: {
+    backgroundColor: "#18385D",
+    borderWidth: 1,
+    borderColor: "#fff",
     height: 50,
-    width: "100%",
+    width: "85%",
     paddingHorizontal: 10,
     color: "#fff",
   },
@@ -40,7 +42,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   placeholder: {
-    color: "#a9a9a9",
+    color: "#000",
   },
   // Add Flight Icon
   addflightIcon: {
@@ -55,10 +57,10 @@ const styles = StyleSheet.create({
     right: 20,
   },
   closeIconColor: {
-    color: "red",
+    color: "#fff",
   },
   addflightcolorIcon: {
-    color: "red",
+    color: "#fff",
   },
   // Modal Styles
   centeredView: {
@@ -67,21 +69,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 22,
   },
-
   modalView: {
     margin: 20,
-    backgroundColor: "#272D71",
+    backgroundColor: "#132C4A",
     borderRadius: 20,
+    borderWidth: 0.5,
     padding: 35,
     alignItems: "center",
-    shadowColor: "#fff",
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 2,
     },
     shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
+    shadowRadius: 10,
+    elevation: 20,
   },
 
   modalText: {
