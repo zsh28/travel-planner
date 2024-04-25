@@ -53,5 +53,5 @@ Below are the screenshots showcasing different screens and features of the app:
 <details>
 <summary>Settings Screen</summary>
 <img src="https://i.imgur.com/KzGYXRV.png">
-<p><strong>Settings Screen:</strong> Allows users to customize app settings such as themes and notifications.</p>
+<p><strong>Settings Screen:</strong> Allows users to logout of the application.</p>
 </details>
